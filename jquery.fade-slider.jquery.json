@@ -1,0 +1,35 @@
+{
+    "name": "jquery.fade-slider",
+    "title": "jQuery Fade Slider",
+    "description": "a fade effect slider plugin for jQuery.",
+    "keywords": [
+        "fade",
+        "slider"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "ZHAO Xudong",
+        "email": "zxdong@gmail.com",
+        "url": "http://html5beta.com"
+    },
+    "maintainers": [
+        {
+            "name": "ZHAO Xudong",
+            "email": "zxdong@gmail.com",
+            "url": "http://html5beta.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/zxdong262/jquery.fade-slider/blob/master/mit-license.txt"
+        }
+    ],
+    "bugs": "https://github.com/zxdong262/jquery.fade-slider/issues",
+    "homepage": "http://html5beta.com/jquery-2/jquery-fade-slider/",
+    "docs": "http://html5beta.com/jquery-2/jquery-fade-slider/",
+    "demo": "http://html5beta.com/jquery-2/jquery-fade-slider/",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
