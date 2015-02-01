@@ -16,7 +16,8 @@
 			,navRightTxt: '&raquo;'
 			,zIndex:20
 			,showIndicator: true
-			,callback: function() {}
+			,beforeAction: null
+			,afterAction: null
 		}
 		,th = this
 		,defs = th.defs = $.extend(defaults, opts)
@@ -102,13 +103,14 @@
 			cds.eq(c).addClass('fs-on').siblings().removeClass('fs-on')
 			ip.fadeTo(speed, 1, function() {
 				ip.css('z-index', defs.zIndex + 2)
-			});
+			})
+			$.isFunction(th.defs.beforeAction) && th.defs.beforeAction.call(th)
 			cp.fadeTo(speed, 0, function() {
 				cp.css('z-index', defs.zIndex)
 				th.currentPage = index
 				cds.eq(th.currentPage).addClass('fs-on').siblings().removeClass('fs-on')
 				th.onAction = false
-				th.defs.callback.call(th)
+				$.isFunction(th.defs.afterAction) && th.defs.afterAction.call(th)
 				if(defs.autoSlider) {
 					clearTimeout(th.flag)
 					th.flag = setTimeout(function() {
@@ -139,9 +141,8 @@
 			t.t.children('.fs-dots').remove()
 			t.t.children('.fade-slide').removeAttr('style').removeClass('fade-slide')
 			$.each( t, function( key, value ) {
-				t[key] = null
+				delete t[key]
 			})
-			t = null
 		}
 		
 	}
@@ -150,5 +151,5 @@
 	$.fn.fadeSlider = function(opts) {
 		return new FS(opts, this)
     }
-})(jQuery);
+})(jQuery)
  

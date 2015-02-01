@@ -174,7 +174,7 @@ h1, h2 {
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.1.min.js"></script>  
 <script src="http://zxdong262.github.io/zui/js/zui.js"></script>
-<script src="js/jquery.fade-slider.min.js"></script> 
+<script src="js/jquery.fade-slider.js"></script> 
 <script>
 //scripts
 $(document).ready(function() {
@@ -239,6 +239,18 @@ $(document).ready(function() {
   		,navLeftTxt: '&laquo;'
   		,navRightTxt: '&raquo;'
   		,zIndex:20
+  		,beforeAction: function() {
+  			//this refers to DS instance
+  			this.t.css({
+  				background: '#08c'
+  			})
+  		}
+  		,afterAction: function() {
+  			this.t.css({
+  				background: '#eee'
+  			})
+  			//this refers to DS instance
+  		}
   	}
 	,as = $('#fades1').fadeSlider(defaults)
 	,count = 2
@@ -271,15 +283,7 @@ $(document).ready(function() {
 	})
 })
 
-</script> 
-<!--<script>
-var _gaq=[["_setAccount","UA-18213564-1"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
-</script>-->
-
-<!-- end scripts --> 
+</script>
 
 </body>
 </html>
